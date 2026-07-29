@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "Se utilizar este repositorio, cite-o conforme os dados abaixo e cite separadamente o trabalho LUMI."
-title: "Traducao de linguagem natural para Nile com modelo compacto"
+message: "Se utilizar este repositório, cite-o conforme os dados abaixo e cite separadamente o trabalho LUMI."
+title: "Tradução de linguagem natural para Nile com modelo compacto"
 type: software
 authors:
   - family-names: "Guedes"
-    given-names: "Thissilla"
+    given-names: "Thíssilla"
 year: 2026
 version: "1.0.0"
-repository-code: "https://github.com/CypherGuedes/nl-to-nile-compact-llm"
+repository-code: "https://github.com/CypherGuedes/traducao-nl-nile-modelo-compacto"
