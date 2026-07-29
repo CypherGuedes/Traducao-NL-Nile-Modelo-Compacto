@@ -1,0 +1,185 @@
+Você é o modelo professor de um experimento reproduzível de tradução de intenções de rede em linguagem natural para a linguagem formal Nile.
+
+Definições:
+- Linguagem natural (NL): enunciado de entrada escrito em inglês.
+- Nile: linguagem formal de destino utilizada como resposta esperada do experimento.
+- CAMPI: conjunto de referência com 50 pares de NL e Nile.
+- Representação Intermediária (IR): estrutura JSON controlada e derivada deterministicamente da estrutura formal da expressão Nile de referência.
+- R1: justificativa explícita da passagem de NL para IR.
+- R2: justificativa explícita da passagem de IR para Nile.
+- R3: justificativa explícita da passagem direta de NL para Nile.
+
+Requisitos de idioma e preservação:
+1. As instruções deste prompt estão em português, mas o conteúdo textual de cada justificativa deve ser produzido integralmente em inglês.
+2. Escreva cada justificativa integralmente em inglês.
+3. Use inglês técnico, conciso e composto por frases completas.
+4. Preserve exatamente todos os nomes de campos JSON, campos estruturais, valores controlados, palavras-chave da Nile, operadores, identificadores, nomes de serviços, protocolos, grupos, endpoints e middleboxes, unidades e valores literais fornecidos no exemplo.
+5. Não traduza nem parafraseie valores formais.
+6. Não altere a entrada NL, a IR ou a referência Nile.
+7. Não acrescente informações que não sejam sustentadas pelo exemplo fornecido.
+8. Não escreva o conteúdo dos campos de justificativa em português ou em outro idioma diferente do inglês.
+
+Requisitos da saída JSON:
+1. Retorne somente JSON válido.
+2. Não use Markdown nem cercas de código.
+3. Não inclua introduções, comentários, explicações fora do JSON ou texto após o fechamento do objeto.
+4. Use aspas duplas em todas as chaves e strings.
+5. Não coloque vírgula após o último item de um objeto ou de uma lista.
+6. Use true, false e null conforme o padrão JSON, quando necessário.
+7. Não inclua campos que não foram solicitados.
+
+Tarefa:
+Gere uma justificativa R3 para cada exemplo fornecido.
+
+Uma justificativa R3 explica a passagem direta do enunciado NL em inglês para a expressão Nile correspondente. Ela será utilizada somente como artefato demonstrativo em exemplos few-shot.
+
+Exemplos fornecidos:
+{
+  "items": [
+    {
+      "id": "campi_001",
+      "nl": "If a student is in obvious violations of copyright law by using a room's wired connection (ie ResNet) to distribute copyrighted materials, the room's connection will be disabled, and the issue could be sent to Housing Student Judicial Affairs",
+      "nile": "define intent uniIntent: for group('students') add middlebox('copyright monitoring')"
+    },
+    {
+      "id": "campi_002",
+      "nl": "Currently, the University of Illinois does not have any rate limits",
+      "nile": "define intent uniIntent: for endpoint('university') unset bandwidth()"
+    },
+    {
+      "id": "campi_003",
+      "nl": "University Housing monitors only the amount of traffic of each user",
+      "nile": "define intent uniIntent: for endpoint('dorms') add middlebox('traffic monitor')"
+    },
+    {
+      "id": "campi_004",
+      "nl": "CounterStrike server is blocked by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') block service('CounterStrike')"
+    },
+    {
+      "id": "campi_005",
+      "nl": "AIM chat and file transfering is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow service('AIM chat'), service('file transfer')"
+    },
+    {
+      "id": "campi_006",
+      "nl": "Battlenet is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow service('Battlenet')"
+    },
+    {
+      "id": "campi_007",
+      "nl": "H323 video conferencing is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow traffic('H323 video conferencing')"
+    },
+    {
+      "id": "campi_008",
+      "nl": "Everquest is blocked by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') block service('Everquest')"
+    },
+    {
+      "id": "campi_009",
+      "nl": "HTTP and HTTPS are allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow protocol('HTTP'), protocol('HTTPS')"
+    },
+    {
+      "id": "campi_010",
+      "nl": "IMAP and secure IMAP are allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow protocol('IMAP'), protocol('secure IMAP')"
+    },
+    {
+      "id": "campi_011",
+      "nl": "MSN audio and video communications are not allowed by the University firewall, but the MSN chat, application sharing and file transferring are not blocked",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') block service('MSN video'), service('MSN audio') allow service('MSN chat'), service('MSN application sharing'), service('file transfer')"
+    },
+    {
+      "id": "campi_012",
+      "nl": "Net2Phone is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow service('Net2Phone')"
+    },
+    {
+      "id": "campi_013",
+      "nl": "PC-Telephone is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow service('PC Telephone')"
+    },
+    {
+      "id": "campi_014",
+      "nl": "POP3 and secure POP are allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow protocol('POP3'), protocol('secure POP')"
+    },
+    {
+      "id": "campi_015",
+      "nl": "SMTP is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow protocol('SMTP')"
+    },
+    {
+      "id": "campi_016",
+      "nl": "Sony Playstation 2 is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow service('Sony Playstation 2')"
+    },
+    {
+      "id": "campi_017",
+      "nl": "SSH is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow protocol('SSH')"
+    },
+    {
+      "id": "campi_018",
+      "nl": "Telnet is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow protocol('Telnet')"
+    },
+    {
+      "id": "campi_019",
+      "nl": "Sorenson Videophone 200 is allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow service('Sorenson Videophone 200')"
+    },
+    {
+      "id": "campi_020",
+      "nl": "FTP and SFTP servers are allowed by the University firewall",
+      "nile": "define intent uniIntent: for endpoint('university') add middlebox('firewall') allow protocol('ftp'), protocol('sftp')"
+    },
+    {
+      "id": "campi_021",
+      "nl": "Students data limit is 100 GB per week",
+      "nile": "define intent uniIntent: for group('students') set quota('download', '100', 'gb/wk')"
+    },
+    {
+      "id": "campi_022",
+      "nl": "Students 10 GB a day download quotas are on 10 AM to Midnight",
+      "nile": "define intent uniIntent: for group('students') set quota('download', '10', 'gb/d') start hour('10:00') end hour('23:59')"
+    },
+    {
+      "id": "campi_023",
+      "nl": "The system passively monitors the network throughput when traffic is light",
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('traffic monitor')"
+    },
+    {
+      "id": "campi_024",
+      "nl": "There is a 6 GB per 24-hour period upload or download data transfer limit, starting at midnight of each day, on all your combined traffic on ResNet and UIC wireless",
+      "nile": "define intent uniIntent: for endpoint('dorms'), endpoint('wireless') set quota('any', '6', 'gb/d') start hour('00:00') end hour('23:59')"
+    },
+    {
+      "id": "campi_025",
+      "nl": "Guests cannot run any file sharing/downloading program",
+      "nile": "define intent uniIntent: for endpoint('guests') block service('file transfer')"
+    }
+  ]
+}
+
+Requisitos específicos:
+1. Gere exatamente uma justificativa R3 para cada exemplo.
+2. Preserve o id original de cada exemplo.
+3. Mantenha cada justificativa concisa, objetiva e verificável.
+4. Explique ação, escopo, entidades, relações, argumentos e restrições temporais somente quando esses elementos estiverem presentes no par NL-Nile.
+5. Preserve o vocabulário formal e os valores literais da referência Nile.
+6. Não acrescente informações ausentes do par fornecido.
+7. Retorne somente os campos id e r3.
+8. O valor do campo r3 deve estar integralmente em inglês.
+
+Formato obrigatório:
+{
+  "items": [
+    {
+      "id": "campi_001",
+      "r3": "English rationale explaining the direct mapping from NL to Nile."
+    }
+  ]
+}

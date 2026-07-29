@@ -1,0 +1,104 @@
+{
+"items": [
+{
+"id": "campi_001",
+"r1": "The NL states that if a student uses a wired connection to violate copyright, the connection will be disabled and the case referred. The IR maps the intent to a 'for' scope targeting the group 'students' and adds a 'copyright monitoring' middlebox, without representing the conditional or the disabling action."
+},
+{
+"id": "campi_002",
+"r1": "The NL asserts that the University of Illinois has no rate limits. The IR reflects this by setting a 'for' scope on the endpoint 'university' and applying an 'unset' operation on bandwidth, removing any rate limit."
+},
+{
+"id": "campi_003",
+"r1": "The NL indicates that University Housing monitors only the traffic volume per user. The IR maps this to a 'for' scope on the endpoint 'dorms' and adds a 'traffic monitor' middlebox."
+},
+{
+"id": "campi_004",
+"r1": "The NL says the CounterStrike server is blocked by the university firewall. The IR defines a 'for' scope on the endpoint 'university', first adds a 'firewall' middlebox, then blocks the service 'CounterStrike'."
+},
+{
+"id": "campi_005",
+"r1": "The NL permits AIM chat and file transferring through the university firewall. The IR uses a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the services 'AIM chat' and 'file transfer'."
+},
+{
+"id": "campi_006",
+"r1": "The NL allows Battlenet through the university firewall. The IR sets a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the service 'Battlenet'."
+},
+{
+"id": "campi_007",
+"r1": "The NL permits H323 video conferencing through the university firewall. The IR uses a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the traffic type 'H323 video conferencing'."
+},
+{
+"id": "campi_008",
+"r1": "The NL says Everquest is blocked by the university firewall. The IR defines a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and blocks the service 'Everquest'."
+},
+{
+"id": "campi_009",
+"r1": "The NL permits HTTP and HTTPS through the university firewall. The IR uses a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the protocols 'HTTP' and 'HTTPS'."
+},
+{
+"id": "campi_010",
+"r1": "The NL allows IMAP and secure IMAP through the university firewall. The IR defines a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the protocols 'IMAP' and 'secure IMAP'."
+},
+{
+"id": "campi_011",
+"r1": "The NL denies MSN audio and video but permits MSN chat, application sharing, and file transferring. The IR uses a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, blocks the services 'MSN video' and 'MSN audio', and allows the services 'MSN chat', 'MSN application sharing', and 'file transfer'."
+},
+{
+"id": "campi_012",
+"r1": "The NL allows Net2Phone through the university firewall. The IR defines a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the service 'Net2Phone'."
+},
+{
+"id": "campi_013",
+"r1": "The NL permits PC-Telephone through the university firewall. The IR uses a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the service 'PC Telephone'."
+},
+{
+"id": "campi_014",
+"r1": "The NL allows POP3 and secure POP through the university firewall. The IR sets a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the protocols 'POP3' and 'secure POP'."
+},
+{
+"id": "campi_015",
+"r1": "The NL permits SMTP through the university firewall. The IR defines a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the protocol 'SMTP'."
+},
+{
+"id": "campi_016",
+"r1": "The NL allows Sony Playstation 2 through the university firewall. The IR uses a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the service 'Sony Playstation 2'."
+},
+{
+"id": "campi_017",
+"r1": "The NL permits SSH through the university firewall. The IR sets a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the protocol 'SSH'."
+},
+{
+"id": "campi_018",
+"r1": "The NL allows Telnet through the university firewall. The IR defines a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the protocol 'Telnet'."
+},
+{
+"id": "campi_019",
+"r1": "The NL permits Sorenson Videophone 200 through the university firewall. The IR uses a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the service 'Sorenson Videophone 200'."
+},
+{
+"id": "campi_020",
+"r1": "The NL allows FTP and SFTP servers through the university firewall. The IR defines a 'for' scope on the endpoint 'university', adds a 'firewall' middlebox, and allows the protocols 'ftp' and 'sftp'."
+},
+{
+"id": "campi_021",
+"r1": "The NL sets a weekly data limit of 100 GB for students. The IR maps this to a 'for' scope targeting the group 'students' and a 'set' operation on a download quota with value '100' and unit 'gb/wk'."
+},
+{
+"id": "campi_022",
+"r1": "The NL imposes a daily download quota of 10 GB for students, active from 10 AM to midnight. The IR uses a 'for' scope on the group 'students', a 'set' operation on a download quota with value '10' and unit 'gb/d', and a temporal constraint with start '10:00' and end '23:59'."
+},
+{
+"id": "campi_023",
+"r1": "The NL describes passive monitoring of network throughput when traffic is light. The IR maps this to a 'for' scope on the endpoint 'network' and adds a 'traffic monitor' middlebox, with no temporal constraint."
+},
+{
+"id": "campi_024",
+"r1": "The NL states a combined 6 GB per 24-hour data transfer limit (upload or download) on ResNet and UIC wireless, starting at midnight. The IR uses a 'for' scope targeting the endpoints 'dorms' and 'wireless', sets a transfer quota with constraint 'any', value '6', and unit 'gb/d', and adds a temporal constraint with start '00:00' and end '23:59'."
+},
+{
+"id": "campi_025",
+"r1": "The NL prohibits guests from running any file sharing or downloading program. The IR maps this to a 'for' scope on the endpoint 'guests' and a 'block' operation on the service 'file transfer'."
+}
+]
+}

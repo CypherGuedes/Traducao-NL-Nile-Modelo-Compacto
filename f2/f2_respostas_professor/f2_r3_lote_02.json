@@ -1,0 +1,104 @@
+{
+"items": [
+{
+"id": "campi_026",
+"r3": "The NL specifies a daily bandwidth limit of 10 GB for any traffic direction on the network, which directly translates to setting quota('any', '10', 'gb/d') on endpoint('network')."
+},
+{
+"id": "campi_027",
+"r3": "The NL describes triggering an overuse notification when weekly usage exceeds 10 GB in either direction, which is realized by adding a middlebox('overuse notification') and setting quota('any', '10', 'gb/wk') on endpoint('network')."
+},
+{
+"id": "campi_028",
+"r3": "The NL assigns two quotas to group 'students': 5000 MB/h for download and 2000 MB/h for upload, directly expressed as set quota('download', '5000', 'mb/h'), quota('upload', '2000', 'mb/h')."
+},
+{
+"id": "campi_029",
+"r3": "The NL prohibits routing and NAT on MITNet, which the Nile represents by blocking protocol('nat') on endpoint('dorms')."
+},
+{
+"id": "campi_030",
+"r3": "The NL states that upon reaching 18 GB of data, a bandwidth rate limit of 2 Mbps is applied, which is expressed as setting quota('download', '18', 'gb') and bandwidth('max', '2', 'mbps') on endpoint('host')."
+},
+{
+"id": "campi_031",
+"r3": "The NL specifies a bandwidth limit of 4 Mbps for an individual host, directly translated to setting bandwidth('max', '4', 'mbps') on endpoint('host')."
+},
+{
+"id": "campi_032",
+"r3": "The NL denies access to the internal network for users on RHIT-OPEN, which is modeled by blocking all traffic from endpoint('guests') to endpoint('servers') for group('host')."
+},
+{
+"id": "campi_033",
+"r3": "The NL prohibits running various servers and protocols on ResNet and wireless networks, which is expressed by blocking the corresponding protocols (ftp, telnet, http, dns), services (irc, email), and traffic type (peer2peer) on endpoints 'dorms' and 'wireless'."
+},
+{
+"id": "campi_034",
+"r3": "The NL grants students 200 GB of free monthly usage, mapped to setting a download quota of 200 GB/month for group('students')."
+},
+{
+"id": "campi_035",
+"r3": "The NL provides faculty with 500 Gb per week of free network use, translated to setting a download quota of 500 GB/week for group('professors')."
+},
+{
+"id": "campi_036",
+"r3": "The NL sets a daily 5 GB quota for students with a reset at 6am, which is captured by setting quota('download', '5', 'gb/d') and defining the reset window with start hour('06:00') and end hour('05:59')."
+},
+{
+"id": "campi_037",
+"r3": "The NL imposes a per-host bandwidth limit of 3 Mbps, directly expressed as setting bandwidth('max', '3', 'mbps') on endpoint('host')."
+},
+{
+"id": "campi_038",
+"r3": "The NL caps P2P traffic at 30 Mbps campus-wide, which is realized by setting bandwidth('max', '30', 'mbps') applied to both traffic('peer2peer') and endpoint('campus')."
+},
+{
+"id": "campi_039",
+"r3": "The NL rate-limits guests to 5 Mb/s per user, mapped to setting bandwidth('max', '5', 'mbps') for group('guests')."
+},
+{
+"id": "campi_040",
+"r3": "The NL imposes a 200 GB weekly cap for combined incoming and outgoing traffic on ResNet, represented by setting quota('any', '200', 'gb/wk') for group('dorms')."
+},
+{
+"id": "campi_041",
+"r3": "The NL blocks FTP traffic from the Internet to the UW network, which directly maps to blocking protocol('ftp') in the direction from endpoint('internet') to endpoint('network')."
+},
+{
+"id": "campi_042",
+"r3": "The NL enumerates four security solutions deployed on the network, which are modeled by adding the corresponding middleboxes: 'network border system', 'ips', 'firewall', and 'unit firewall' on endpoint('network')."
+},
+{
+"id": "campi_043",
+"r3": "The NL states that traffic on the network is monitored, which is translated to adding a middlebox('traffic monitor') on endpoint('network')."
+},
+{
+"id": "campi_044",
+"r3": "The NL restricts damaging traffic like NETBIOS, which is implemented by blocking service('NETBIOS') on endpoint('network')."
+},
+{
+"id": "campi_045",
+"r3": "The NL specifies that all network traffic is monitored by an intrusion detection system, which is captured by adding a middlebox('traffic monitor') on endpoint('network')."
+},
+{
+"id": "campi_046",
+"r3": "The NL prohibits running FTP, listservers, and P2P services on ResNet and wireless networks, which maps to blocking protocol('ftp'), service('listserver'), and traffic('peer2peer') on endpoints 'dorms' and 'wireless'."
+},
+{
+"id": "campi_047",
+"r3": "The NL indicates no bandwidth limit for housing, which is expressed by unsetting bandwidth() on endpoint('dorms')."
+},
+{
+"id": "campi_048",
+"r3": "The NL describes the use of a firewall on the network, which is translated to adding a middlebox('firewall') on endpoint('network')."
+},
+{
+"id": "campi_049",
+"r3": "The NL indicates that the firewall blocks H.323 video and audio conferencing, which is expressed by blocking traffic('H323 video conferencing') on endpoint('network')."
+},
+{
+"id": "campi_050",
+"r3": "The NL states that the network is continually scanned for threats, which is represented by adding a middlebox('traffic monitor') on endpoint('network')."
+}
+]
+}

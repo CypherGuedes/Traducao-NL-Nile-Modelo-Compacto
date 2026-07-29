@@ -1,0 +1,104 @@
+{
+"items": [
+{
+"id": "campi_001",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target of kind 'group' with value 'students' produce 'for group('students')'. The operation with operator 'add' and an item of kind 'middlebox' and value 'copyright monitoring' results in 'add middlebox('copyright monitoring')'."
+},
+{
+"id": "campi_002",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target of kind 'endpoint' with value 'university' yield 'for endpoint('university')'. The operation 'unset' with an item of kind 'bandwidth' without additional parameters becomes 'unset bandwidth()'."
+},
+{
+"id": "campi_003",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target of kind 'endpoint' with value 'dorms' produce 'for endpoint('dorms')'. The operation 'add' with an item of kind 'middlebox' and value 'traffic monitor' yields 'add middlebox('traffic monitor')'."
+},
+{
+"id": "campi_004",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target of kind 'endpoint' with value 'university' produce 'for endpoint('university')'. The first operation 'add' with a middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'block' with a service 'CounterStrike' becomes 'block service('CounterStrike')'."
+},
+{
+"id": "campi_005",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with two service items 'AIM chat' and 'file transfer' becomes 'allow service('AIM chat'), service('file transfer')'."
+},
+{
+"id": "campi_006",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a service 'Battlenet' becomes 'allow service('Battlenet')'."
+},
+{
+"id": "campi_007",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a traffic item 'H323 video conferencing' becomes 'allow traffic('H323 video conferencing')'."
+},
+{
+"id": "campi_008",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'block' with a service 'Everquest' becomes 'block service('Everquest')'."
+},
+{
+"id": "campi_009",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with two protocol items 'HTTP' and 'HTTPS' becomes 'allow protocol('HTTP'), protocol('HTTPS')'."
+},
+{
+"id": "campi_010",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with two protocol items 'IMAP' and 'secure IMAP' becomes 'allow protocol('IMAP'), protocol('secure IMAP')'."
+},
+{
+"id": "campi_011",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'block' with two service items 'MSN video' and 'MSN audio' becomes 'block service('MSN video'), service('MSN audio')'. The third operation 'allow' with three service items 'MSN chat', 'MSN application sharing', and 'file transfer' becomes 'allow service('MSN chat'), service('MSN application sharing'), service('file transfer')'."
+},
+{
+"id": "campi_012",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a service 'Net2Phone' becomes 'allow service('Net2Phone')'."
+},
+{
+"id": "campi_013",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a service 'PC Telephone' becomes 'allow service('PC Telephone')'."
+},
+{
+"id": "campi_014",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with two protocol items 'POP3' and 'secure POP' becomes 'allow protocol('POP3'), protocol('secure POP')'."
+},
+{
+"id": "campi_015",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a protocol 'SMTP' becomes 'allow protocol('SMTP')'."
+},
+{
+"id": "campi_016",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a service 'Sony Playstation 2' becomes 'allow service('Sony Playstation 2')'."
+},
+{
+"id": "campi_017",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a protocol 'SSH' becomes 'allow protocol('SSH')'."
+},
+{
+"id": "campi_018",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a protocol 'Telnet' becomes 'allow protocol('Telnet')'."
+},
+{
+"id": "campi_019",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with a service 'Sorenson Videophone 200' becomes 'allow service('Sorenson Videophone 200')'."
+},
+{
+"id": "campi_020",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'university' yield 'for endpoint('university')'. The first operation 'add' with middlebox 'firewall' becomes 'add middlebox('firewall')'. The second operation 'allow' with two protocol items 'ftp' and 'sftp' becomes 'allow protocol('ftp'), protocol('sftp')'."
+},
+{
+"id": "campi_021",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target of kind 'group' with value 'students' produce 'for group('students')'. The operation 'set' with an item of kind 'quota' having constraint 'download', value '100', and unit 'gb/wk' becomes 'set quota('download', '100', 'gb/wk')'."
+},
+{
+"id": "campi_022",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target group 'students' yield 'for group('students')'. The operation 'set' with quota item constraint 'download', value '10', unit 'gb/d' becomes 'set quota('download', '10', 'gb/d')'. The temporal constraint with start '10:00' and end '23:59' adds 'start hour('10:00') end hour('23:59')'."
+},
+{
+"id": "campi_023",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target of kind 'endpoint' with value 'network' produce 'for endpoint('network')'. The operation 'add' with a middlebox 'traffic monitor' becomes 'add middlebox('traffic monitor')'."
+},
+{
+"id": "campi_024",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the targets endpoint 'dorms' and endpoint 'wireless' produce 'for endpoint('dorms'), endpoint('wireless')'. The operation 'set' with quota item constraint 'any', value '6', unit 'gb/d' becomes 'set quota('any', '6', 'gb/d')'. The temporal constraint with start '00:00' and end '23:59' adds 'start hour('00:00') end hour('23:59')'."
+},
+{
+"id": "campi_025",
+"r2": "The intent definition starts with 'define intent uniIntent:'. The scope type 'for' and the target endpoint 'guests' yield 'for endpoint('guests')'. The operation 'block' with a service 'file transfer' becomes 'block service('file transfer')'."
+}
+]
+}

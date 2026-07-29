@@ -1,0 +1,6 @@
+{
+"id": "campi_036",
+"tipo": "R2",
+"justificativa": "The IR is mapped to Nile as follows: the scope of type 'for' with target group 'students' renders as 'for group('students')'. The operation with operator 'set' and a quota item (constraint 'download', value '5', unit 'gb/d') renders as 'set quota('download','5','gb/d')'. The temporal constraint with start '06:00' and end '05:59' renders as 'start hour('06:00') end hour('05:59')'. These components are assembled into 'define intent uniIntent: for group('students') set quota('download','5','gb/d') start hour('06:00') end hour('05:59')'."
+}
+

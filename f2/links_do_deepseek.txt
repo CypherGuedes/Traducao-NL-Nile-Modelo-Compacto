@@ -1,0 +1,38 @@
+Conversas do modelo professor utilizadas na F2
+
+Este arquivo registra os links públicos das conversas utilizadas na
+geração e na revisão das justificativas R1, R2 e R3.
+
+Os links são disponibilizados como documentação complementar. Os
+prompts e as respostas efetivamente utilizados pelo experimento também
+estão preservados localmente nas pastas
+`f2_solicitacoes_professor/` e `f2_respostas_professor/`, que
+constituem os registros permanentes da execução.
+
+
+Geração de R1:
+
+1. [R1, lote 1](https://chat.deepseek.com/share/rf5xmruc5l5blr1via)
+2. [R1, lote 2](https://chat.deepseek.com/share/zazfvlgphx29iivi2h)
+
+Geração de R2:
+
+1. [R2, lote 1](https://chat.deepseek.com/share/kqwvw1utdwkkwx51fw)
+2. [R2, lote 2](https://chat.deepseek.com/share/7c4gnen0lr3y73tdv8)
+
+Geração de R3:
+
+1. [R3, lote 1](https://chat.deepseek.com/share/xa69g61cghj62r0cp3)
+2. [R3, lote 2](https://chat.deepseek.com/share/hchv4f82y5vyzachhm)
+
+Revisão seletiva:
+
+1. [Correção da justificativa R2 reprovada na validação](https://chat.deepseek.com/share/cbjhrzpxvc59nm9wjm)
+
+
+Observação de preservação
+
+Os links externos podem tornar-se indisponíveis ou sofrer alterações
+na plataforma de origem. Por esse motivo, a reprodução do experimento
+não depende dessas páginas. As solicitações e as respostas utilizadas
+estão preservadas nos arquivos locais da F2.

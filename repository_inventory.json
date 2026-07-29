@@ -1,0 +1,155 @@
+{
+  "repositorio": "nl-to-nile-compact-llm",
+  "arquivo_fonte": "Kaggle(9).zip",
+  "sha256_arquivo_fonte": "260a8b81c3fdb69e75514fe145f1801f81dd74c5946e9f72e7fb40b39f95070a",
+  "arquivos_originais_preservados": 39,
+  "falhas_preservacao": [],
+  "notebooks": 11,
+  "pacotes_operacionais": 11,
+  "links_publicos_f2": 7,
+  "arquivos_adicionados_na_raiz": [
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "CITATION.cff",
+    "requirements.txt",
+    ".gitignore",
+    "LICENSES/LUMI_GPL-3.0.txt",
+    "REPOSITORY_INVENTORY.json"
+  ],
+  "auditoria_notebooks": [
+    {
+      "arquivo": "F0/f0-preparacao-base.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F1/f1-preparacao-ir.ipynb",
+      "celulas_codigo_nao_vazias": 9,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F2/f2-preparacao-r1-r2-r3.ipynb",
+      "celulas_codigo_nao_vazias": 11,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F3/f3-ac-final.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F3/f3-modelo.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F3/f3a-estrategia-a.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F3/f3b-estrategia-b.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F3/f3c-estrategia-c.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F3/f3d-estrategia-d.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F3/f3e-estrategia-e.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    },
+    {
+      "arquivo": "F4/f4-resultados.ipynb",
+      "celulas_codigo_nao_vazias": 10,
+      "celulas_nao_executadas": 0,
+      "saidas_erro": 0
+    }
+  ],
+  "auditoria_pacotes": [
+    {
+      "arquivo": "F0/f0_operacional.zip",
+      "entradas": 22,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F1/f1_operacional.zip",
+      "entradas": 5,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F2/f2_operacional.zip",
+      "entradas": 5,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F3/f3_autocorrecao_final.zip",
+      "entradas": 52,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F3/f3_modelo_operacional.zip",
+      "entradas": 30,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F3/f3a_traducao_direta.zip",
+      "entradas": 19,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F3/f3b_autocorrecao_traducao_direta.zip",
+      "entradas": 21,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F3/f3c_traducao_com_ir.zip",
+      "entradas": 39,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F3/f3d_traducao_com_r3.zip",
+      "entradas": 34,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F3/f3e_traducao_com_r1_r2.zip",
+      "entradas": 39,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    },
+    {
+      "arquivo": "F4/f4_consolidacao_resultados.zip",
+      "entradas": 32,
+      "duplicadas": 0,
+      "arquivo_corrompido": null
+    }
+  ]
+}

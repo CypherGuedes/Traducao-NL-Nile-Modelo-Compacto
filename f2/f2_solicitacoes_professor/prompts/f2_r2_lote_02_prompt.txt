@@ -1,0 +1,920 @@
+Você é o modelo professor de um experimento reproduzível de tradução de intenções de rede em linguagem natural para a linguagem formal Nile.
+
+Definições:
+- Linguagem natural (NL): enunciado de entrada escrito em inglês.
+- Nile: linguagem formal de destino utilizada como resposta esperada do experimento.
+- CAMPI: conjunto de referência com 50 pares de NL e Nile.
+- Representação Intermediária (IR): estrutura JSON controlada e derivada deterministicamente da estrutura formal da expressão Nile de referência.
+- R1: justificativa explícita da passagem de NL para IR.
+- R2: justificativa explícita da passagem de IR para Nile.
+- R3: justificativa explícita da passagem direta de NL para Nile.
+
+Requisitos de idioma e preservação:
+1. As instruções deste prompt estão em português, mas o conteúdo textual de cada justificativa deve ser produzido integralmente em inglês.
+2. Escreva cada justificativa integralmente em inglês.
+3. Use inglês técnico, conciso e composto por frases completas.
+4. Preserve exatamente todos os nomes de campos JSON, campos estruturais, valores controlados, palavras-chave da Nile, operadores, identificadores, nomes de serviços, protocolos, grupos, endpoints e middleboxes, unidades e valores literais fornecidos no exemplo.
+5. Não traduza nem parafraseie valores formais.
+6. Não altere a entrada NL, a IR ou a referência Nile.
+7. Não acrescente informações que não sejam sustentadas pelo exemplo fornecido.
+8. Não escreva o conteúdo dos campos de justificativa em português ou em outro idioma diferente do inglês.
+
+Requisitos da saída JSON:
+1. Retorne somente JSON válido.
+2. Não use Markdown nem cercas de código.
+3. Não inclua introduções, comentários, explicações fora do JSON ou texto após o fechamento do objeto.
+4. Use aspas duplas em todas as chaves e strings.
+5. Não coloque vírgula após o último item de um objeto ou de uma lista.
+6. Use true, false e null conforme o padrão JSON, quando necessário.
+7. Não inclua campos que não foram solicitados.
+
+Tarefa:
+Gere uma justificativa R2 para cada exemplo fornecido.
+
+Uma justificativa R2 explica como os campos da Representação Intermediária são compostos na expressão Nile correspondente.
+
+Exemplos fornecidos:
+{
+  "items": [
+    {
+      "id": "campi_026",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "any",
+                "value": "10",
+                "unit": "gb/d"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') set quota('any', '10', 'gb/d')"
+    },
+    {
+      "id": "campi_027",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "overuse notification"
+              }
+            ]
+          },
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "any",
+                "value": "10",
+                "unit": "gb/wk"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('overuse notification') set quota('any', '10', 'gb/wk')"
+    },
+    {
+      "id": "campi_028",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "students"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "download",
+                "value": "5000",
+                "unit": "mb/h"
+              },
+              {
+                "kind": "quota",
+                "constraint": "upload",
+                "value": "2000",
+                "unit": "mb/h"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for group('students') set quota('download', '5000', 'mb/h'), quota('upload', '2000', 'mb/h')"
+    },
+    {
+      "id": "campi_029",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "dorms"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "nat"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('dorms') block protocol('nat')"
+    },
+    {
+      "id": "campi_030",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "host"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "download",
+                "value": "18",
+                "unit": "gb"
+              },
+              {
+                "kind": "bandwidth",
+                "constraint": "max",
+                "value": "2",
+                "unit": "mbps"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('host') set quota('download', '18', 'gb'), bandwidth('max', '2', 'mbps')"
+    },
+    {
+      "id": "campi_031",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "host"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "bandwidth",
+                "constraint": "max",
+                "value": "4",
+                "unit": "mbps"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('host') set bandwidth('max', '4', 'mbps')"
+    },
+    {
+      "id": "campi_032",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "route_for",
+          "source": {
+            "kind": "endpoint",
+            "value": "guests"
+          },
+          "destination": {
+            "kind": "endpoint",
+            "value": "servers"
+          },
+          "targets": [
+            {
+              "kind": "group",
+              "value": "host"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "traffic",
+                "value": "any"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: from endpoint('guests') to endpoint('servers') for group('host') block traffic('any')"
+    },
+    {
+      "id": "campi_033",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "dorms"
+            },
+            {
+              "kind": "endpoint",
+              "value": "wireless"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "ftp"
+              },
+              {
+                "kind": "protocol",
+                "value": "telnet"
+              },
+              {
+                "kind": "traffic",
+                "value": "peer2peer"
+              },
+              {
+                "kind": "protocol",
+                "value": "http"
+              },
+              {
+                "kind": "service",
+                "value": "irc"
+              },
+              {
+                "kind": "protocol",
+                "value": "dns"
+              },
+              {
+                "kind": "service",
+                "value": "email"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('dorms'), endpoint('wireless') block protocol('ftp'), protocol('telnet'), traffic('peer2peer'), protocol('http'), service('irc'), protocol('dns'), service('email')"
+    },
+    {
+      "id": "campi_034",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "students"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "download",
+                "value": "200",
+                "unit": "gb/mth"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for group('students') set quota('download', '200', 'gb/mth')"
+    },
+    {
+      "id": "campi_035",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "professors"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "download",
+                "value": "500",
+                "unit": "gb/wk"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for group('professors') set quota('download', '500', 'gb/wk')"
+    },
+    {
+      "id": "campi_036",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "students"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "download",
+                "value": "5",
+                "unit": "gb/d"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": {
+          "start": "06:00",
+          "end": "05:59"
+        }
+      },
+      "nile": "define intent uniIntent: for group('students') set quota('download', '5', 'gb/d') start hour('06:00') end hour('05:59')"
+    },
+    {
+      "id": "campi_037",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "host"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "bandwidth",
+                "constraint": "max",
+                "value": "3",
+                "unit": "mbps"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('host') set bandwidth('max', '3', 'mbps')"
+    },
+    {
+      "id": "campi_038",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "traffic",
+              "value": "peer2peer"
+            },
+            {
+              "kind": "endpoint",
+              "value": "campus"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "bandwidth",
+                "constraint": "max",
+                "value": "30",
+                "unit": "mbps"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for traffic('peer2peer'), endpoint('campus') set bandwidth('max', '30', 'mbps')"
+    },
+    {
+      "id": "campi_039",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "guests"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "bandwidth",
+                "constraint": "max",
+                "value": "5",
+                "unit": "mbps"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for group('guests') set bandwidth('max', '5', 'mbps')"
+    },
+    {
+      "id": "campi_040",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "dorms"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "any",
+                "value": "200",
+                "unit": "gb/wk"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for group('dorms') set quota('any', '200', 'gb/wk')"
+    },
+    {
+      "id": "campi_041",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "route",
+          "source": {
+            "kind": "endpoint",
+            "value": "internet"
+          },
+          "destination": {
+            "kind": "endpoint",
+            "value": "network"
+          },
+          "targets": []
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "ftp"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: from endpoint('internet') to endpoint('network') block protocol('ftp')"
+    },
+    {
+      "id": "campi_042",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "network border system"
+              },
+              {
+                "kind": "middlebox",
+                "value": "ips"
+              },
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              },
+              {
+                "kind": "middlebox",
+                "value": "unit firewall"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('network border system'), middlebox('ips'), middlebox('firewall'), middlebox('unit firewall')"
+    },
+    {
+      "id": "campi_043",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "traffic monitor"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('traffic monitor')"
+    },
+    {
+      "id": "campi_044",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "service",
+                "value": "NETBIOS"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') block service('NETBIOS')"
+    },
+    {
+      "id": "campi_045",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "traffic monitor"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('traffic monitor')"
+    },
+    {
+      "id": "campi_046",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "dorms"
+            },
+            {
+              "kind": "endpoint",
+              "value": "wireless"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "ftp"
+              },
+              {
+                "kind": "service",
+                "value": "listserver"
+              },
+              {
+                "kind": "traffic",
+                "value": "peer2peer"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('dorms'), endpoint('wireless') block protocol('ftp'), service('listserver'), traffic('peer2peer')"
+    },
+    {
+      "id": "campi_047",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "dorms"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "unset",
+            "items": [
+              {
+                "kind": "bandwidth"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('dorms') unset bandwidth()"
+    },
+    {
+      "id": "campi_048",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('firewall')"
+    },
+    {
+      "id": "campi_049",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "traffic",
+                "value": "H323 video conferencing"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') block traffic('H323 video conferencing')"
+    },
+    {
+      "id": "campi_050",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "traffic monitor"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      },
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('traffic monitor')"
+    }
+  ]
+}
+
+Requisitos específicos:
+1. Gere exatamente uma justificativa R2 para cada exemplo.
+2. Preserve o id original de cada exemplo.
+3. Mantenha cada justificativa concisa, objetiva e verificável.
+4. Relacione scope, source, destination, targets, operations, items, argumentos e temporal_constraint da IR com a sintaxe Nile correspondente somente quando esses elementos estiverem presentes.
+5. Preserve a ordem das operações quando a expressão Nile de referência contiver várias operações.
+6. Não acrescente informações ausentes da IR ou da referência Nile.
+7. Retorne somente os campos id e r2.
+8. O valor do campo r2 deve estar integralmente em inglês.
+
+Formato obrigatório:
+{
+  "items": [
+    {
+      "id": "campi_001",
+      "r2": "English rationale explaining the mapping from IR to Nile."
+    }
+  ]
+}

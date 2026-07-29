@@ -1,0 +1,104 @@
+{
+"items": [
+{
+"id": "campi_026",
+"r1": "The NL states a 10 GB/day bandwidth limit for any service or system on the network, covering both inbound and outbound traffic. This maps to a scope 'for' the 'network' endpoint, a 'set' operation with a 'quota' item having constraint 'any', value '10', and unit 'gb/d'. No temporal constraint is specified."
+},
+{
+"id": "campi_027",
+"r1": "The NL describes triggering an overuse notification when either inbound or outbound average exceeds 10 GB/week. The IR captures this as two operations: 'add' a 'middlebox' for 'overuse notification' and 'set' a 'quota' with constraint 'any', value '10', unit 'gb/wk'. Scope is 'for' the 'network' endpoint."
+},
+{
+"id": "campi_028",
+"r1": "The NL specifies separate download (5000 MB/h) and upload (2000 MB/h) quotas for students. The IR sets scope 'for' the 'students' group, with a 'set' operation containing two 'quota' items: one with constraint 'download', value '5000', unit 'mb/h'; the other with constraint 'upload', value '2000', unit 'mb/h'."
+},
+{
+"id": "campi_029",
+"r1": "The NL prohibits routers or NAT on MITNet, which is interpreted as blocking the 'nat' protocol for the 'dorms' endpoint. Scope is 'for' targets of kind 'endpoint' with value 'dorms', and the operation is 'block' with an item of kind 'protocol' and value 'nat'."
+},
+{
+"id": "campi_030",
+"r1": "The NL states that when 18 GB of data is reached, an individual's bandwidth is limited to 2 Mbps. This is represented as a scope 'for' the 'host' endpoint, with a 'set' operation containing two items: a 'quota' with constraint 'download', value '18', unit 'gb', and a 'bandwidth' with constraint 'max', value '2', unit 'mbps'. The condition is captured by the quota item triggering the bandwidth limit."
+},
+{
+"id": "campi_031",
+"r1": "The NL imposes a 4 Mbps bandwidth rate limit on an individual. The IR maps this to scope 'for' the 'host' endpoint, with a 'set' operation containing a 'bandwidth' item with constraint 'max', value '4', and unit 'mbps'."
+},
+{
+"id": "campi_032",
+"r1": "The NL states that RHIT-OPEN (a guest network) does not allow users to access the internal Rose-Hulman network. The IR uses scope type 'route_for', with source 'guests', destination 'servers', and targets a 'host' group. The operation 'block' applies to 'traffic' with value 'any', preventing all traffic from guests to internal servers for the host group."
+},
+{
+"id": "campi_033",
+"r1": "The NL prohibits running FTP, telnet, peer-to-peer, HTTP, IRC, DNS, and mail servers on ResNet or UIC wireless. The IR sets scope 'for' targets: 'dorms' and 'wireless' endpoints. The operation 'block' includes items for protocol 'ftp', 'telnet', 'http', 'dns', traffic 'peer2peer', and services 'irc' and 'email'."
+},
+{
+"id": "campi_034",
+"r1": "The NL states that students have 200 GB of free monthly usage. The IR maps this to scope 'for' the 'students' group, with a 'set' operation on a 'quota' item with constraint 'download', value '200', and unit 'gb/mth'."
+},
+{
+"id": "campi_035",
+"r1": "The NL states that faculty members have 500 Gb per week of free network use. The IR uses scope 'for' the 'professors' group, with a 'set' operation on a 'quota' item with constraint 'download', value '500', and unit 'gb/wk'."
+},
+{
+"id": "campi_036",
+"r1": "The NL describes a 5 GB per day quota for students that resets at 6am. The IR sets scope 'for' the 'students' group, with a 'set' operation on a 'quota' item (constraint 'download', value '5', unit 'gb/d'), and a temporal_constraint with start '06:00' and end '05:59' to define the daily reset window."
+},
+{
+"id": "campi_037",
+"r1": "The NL limits Internet to 3 Mbps per host. The IR maps this to scope 'for' the 'host' endpoint, with a 'set' operation on a 'bandwidth' item with constraint 'max', value '3', and unit 'mbps'."
+},
+{
+"id": "campi_038",
+"r1": "The NL caps P2P application at 30 Mbps for the entire campus. The IR captures this by setting scope 'for' two targets: 'traffic' with value 'peer2peer' and 'endpoint' with value 'campus'. The operation is 'set' on a 'bandwidth' item with constraint 'max', value '30', and unit 'mbps'."
+},
+{
+"id": "campi_039",
+"r1": "The NL states that guests' network is rate-limited to 5 Mb/s per user. The IR uses scope 'for' the 'guests' group, with a 'set' operation on a 'bandwidth' item with constraint 'max', value '5', and unit 'mbps'."
+},
+{
+"id": "campi_040",
+"r1": "The NL describes a 200 GB cap per 7-day period for combined incoming and outgoing traffic on ResNet. The IR maps this to scope 'for' the 'dorms' group (ResNet), with a 'set' operation on a 'quota' item with constraint 'any', value '200', and unit 'gb/wk'."
+},
+{
+"id": "campi_041",
+"r1": "The NL states that traffic from the Internet into the UW network over FTP is blocked. The IR uses scope type 'route', with source 'internet' and destination 'network', leaving targets empty. The operation is 'block' on a 'protocol' item with value 'ftp'."
+},
+{
+"id": "campi_042",
+"r1": "The NL lists four network security solutions deployed on the network. The IR maps this to scope 'for' the 'network' endpoint, with an 'add' operation containing four 'middlebox' items: 'network border system', 'ips', 'firewall', and 'unit firewall'."
+},
+{
+"id": "campi_043",
+"r1": "The NL states that ACT/IT Infrastructure monitors network traffic to maintain proper function. The IR interprets this as adding a 'traffic monitor' middlebox, with scope 'for' the 'network' endpoint, and an 'add' operation on a 'middlebox' item with value 'traffic monitor'."
+},
+{
+"id": "campi_044",
+"r1": "The NL states that CIS restricts traffic such as NETBIOS that causes damage. The IR maps this to scope 'for' the 'network' endpoint, with a 'block' operation on a 'service' item with value 'NETBIOS'."
+},
+{
+"id": "campi_045",
+"r1": "The NL describes monitoring all network traffic in and out of Brown's network with an intrusion detection system. The IR captures this as scope 'for' the 'network' endpoint, with an 'add' operation on a 'middlebox' item with value 'traffic monitor'."
+},
+{
+"id": "campi_046",
+"r1": "The NL prohibits running services like FTP, listservers, and P2P file sharing on ResNet or NYURoam wireless. The IR sets scope 'for' endpoints 'dorms' and 'wireless', with a 'block' operation containing items: protocol 'ftp', service 'listserver', and traffic 'peer2peer'."
+},
+{
+"id": "campi_047",
+"r1": "The NL states that Housing does not normally limit bandwidth. The IR represents this as scope 'for' the 'dorms' endpoint, with an 'unset' operation on an item of kind 'bandwidth', indicating removal of any bandwidth limit."
+},
+{
+"id": "campi_048",
+"r1": "The NL states that the UVA More Secure Network uses a firewall for protection. The IR maps this to scope 'for' the 'network' endpoint, with an 'add' operation on a 'middlebox' item with value 'firewall'."
+},
+{
+"id": "campi_049",
+"r1": "The NL notes that the network firewall prevents applications like H.323 video conferencing. The IR captures this as scope 'for' the 'network' endpoint, with a 'block' operation on a 'traffic' item with value 'H323 video conferencing'."
+},
+{
+"id": "campi_050",
+"r1": "The NL states that the UC Davis network is continually scanned for prohibited activities and threats. The IR maps this to scope 'for' the 'network' endpoint, with an 'add' operation on a 'middlebox' item with value 'traffic monitor'."
+}
+]
+}

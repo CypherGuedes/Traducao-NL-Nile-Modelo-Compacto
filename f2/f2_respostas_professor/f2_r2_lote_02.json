@@ -1,0 +1,104 @@
+{
+"items": [
+{
+"id": "campi_026",
+"r2": "The intent_id 'uniIntent' begins the definition. The scope type 'for' maps to the keyword 'for' followed by the target endpoint('network'). The single operation uses the 'set' operator, and its item kind 'quota' becomes 'quota' with arguments constraint 'any', value '10', and unit 'gb/d' as a parenthesized list."
+},
+{
+"id": "campi_027",
+"r2": "The definition starts with intent_id 'uniIntent'. The 'for' scope introduces endpoint('network'). Two operations are concatenated in order: 'add' operator with middlebox('overuse notification'), then 'set' operator with quota('any','10','gb/wk')."
+},
+{
+"id": "campi_028",
+"r2": "intent_id 'uniIntent' starts the declaration. The target is group('students') under 'for'. The 'set' operation combines two items: quota('download','5000','mb/h') and quota('upload','2000','mb/h'), listed comma-separated."
+},
+{
+"id": "campi_029",
+"r2": "The intent_id 'uniIntent' is followed by scope 'for endpoint('dorms')'. The 'block' operator takes a single item, protocol('nat')."
+},
+{
+"id": "campi_030",
+"r2": "After the intent id and scope 'for endpoint('host')', the 'set' operator lists two items: quota with constraint 'download', value '18', unit 'gb', then bandwidth with constraint 'max', value '2', unit 'mbps'."
+},
+{
+"id": "campi_031",
+"r2": "The intent is defined with id 'uniIntent'. Scope 'for endpoint('host')' precedes the 'set' operation with a single bandwidth item: constraint 'max', value '4', unit 'mbps'."
+},
+{
+"id": "campi_032",
+"r2": "Scope type 'route_for' constructs 'from endpoint('guests') to endpoint('servers') for group('host')'. The 'block' operation applies to traffic('any')."
+},
+{
+"id": "campi_033",
+"r2": "The 'for' scope targets two endpoints: endpoint('dorms') and endpoint('wireless'). The 'block' operator lists seven items: protocol('ftp'), protocol('telnet'), traffic('peer2peer'), protocol('http'), service('irc'), protocol('dns'), service('email')."
+},
+{
+"id": "campi_034",
+"r2": "The definition starts with intent id 'uniIntent' and scope 'for group('students')'. The 'set' operation uses quota with constraint 'download', value '200', and unit 'gb/mth'."
+},
+{
+"id": "campi_035",
+"r2": "intent id 'uniIntent' is followed by 'for group('professors')'. The 'set' operation places quota('download','500','gb/wk')."
+},
+{
+"id": "campi_036",
+"r2": "After the scope and operation, the temporal constraint is rendered as 'start hour('06:00') end hour('05:59')'. The operation is 'set quota('download','5','gb/d')'."
+},
+{
+"id": "campi_037",
+"r2": "The intent is declared with id 'uniIntent' and scope 'for endpoint('host')'. The 'set' operator creates bandwidth('max','3','mbps')."
+},
+{
+"id": "campi_038",
+"r2": "The scope combines traffic('peer2peer') and endpoint('campus') in a comma-separated list under 'for'. The 'set' operation assigns bandwidth('max','30','mbps')."
+},
+{
+"id": "campi_039",
+"r2": "intent id 'uniIntent' opens the definition. The target is group('guests') under 'for'. 'set' yields bandwidth('max','5','mbps')."
+},
+{
+"id": "campi_040",
+"r2": "With scope 'for group('dorms')', the 'set' operation defines quota('any','200','gb/wk')."
+},
+{
+"id": "campi_041",
+"r2": "Scope type 'route' omits the 'for' keyword because targets is empty, producing 'from endpoint('internet') to endpoint('network')'. The 'block' operation then lists protocol('ftp')."
+},
+{
+"id": "campi_042",
+"r2": "The scope is 'for endpoint('network')'. The 'add' operation lists four middlebox items: middlebox('network border system'), middlebox('ips'), middlebox('firewall'), middlebox('unit firewall')."
+},
+{
+"id": "campi_043",
+"r2": "intent id 'uniIntent' precedes scope 'for endpoint('network')'. The 'add' operator inserts middlebox('traffic monitor')."
+},
+{
+"id": "campi_044",
+"r2": "The definition uses 'for endpoint('network')' as scope. The 'block' operation takes service('NETBIOS')."
+},
+{
+"id": "campi_045",
+"r2": "The scope is 'for endpoint('network')', and the 'add' operation adds middlebox('traffic monitor')."
+},
+{
+"id": "campi_046",
+"r2": "Scope lists endpoints endpoint('dorms') and endpoint('wireless'). The 'block' operation contains protocol('ftp'), service('listserver'), and traffic('peer2peer')."
+},
+{
+"id": "campi_047",
+"r2": "After 'for endpoint('dorms')', the 'unset' operator generates bandwidth() with empty parentheses because the IR item has kind 'bandwidth' and no further attributes."
+},
+{
+"id": "campi_048",
+"r2": "Scope 'for endpoint('network')' precedes the 'add' operation with middlebox('firewall')."
+},
+{
+"id": "campi_049",
+"r2": "The intent targets endpoint('network') under 'for'. The 'block' operation references traffic('H323 video conferencing')."
+},
+{
+"id": "campi_050",
+"r2": "The scope is 'for endpoint('network')' and the operation 'add' inserts middlebox('traffic monitor')."
+}
+]
+}

@@ -1,0 +1,13 @@
+accelerate
+jsonschema
+lark
+matplotlib
+numpy
+pandas
+Pillow
+scikit-learn
+scipy
+sentence-transformers
+torch
+tqdm
+transformers

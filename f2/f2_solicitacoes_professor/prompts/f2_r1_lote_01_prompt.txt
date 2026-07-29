@@ -1,0 +1,1018 @@
+Você é o modelo professor de um experimento reproduzível de tradução de intenções de rede em linguagem natural para a linguagem formal Nile.
+
+Definições:
+- Linguagem natural (NL): enunciado de entrada escrito em inglês.
+- Nile: linguagem formal de destino utilizada como resposta esperada do experimento.
+- CAMPI: conjunto de referência com 50 pares de NL e Nile.
+- Representação Intermediária (IR): estrutura JSON controlada e derivada deterministicamente da estrutura formal da expressão Nile de referência.
+- R1: justificativa explícita da passagem de NL para IR.
+- R2: justificativa explícita da passagem de IR para Nile.
+- R3: justificativa explícita da passagem direta de NL para Nile.
+
+Requisitos de idioma e preservação:
+1. As instruções deste prompt estão em português, mas o conteúdo textual de cada justificativa deve ser produzido integralmente em inglês.
+2. Escreva cada justificativa integralmente em inglês.
+3. Use inglês técnico, conciso e composto por frases completas.
+4. Preserve exatamente todos os nomes de campos JSON, campos estruturais, valores controlados, palavras-chave da Nile, operadores, identificadores, nomes de serviços, protocolos, grupos, endpoints e middleboxes, unidades e valores literais fornecidos no exemplo.
+5. Não traduza nem parafraseie valores formais.
+6. Não altere a entrada NL, a IR ou a referência Nile.
+7. Não acrescente informações que não sejam sustentadas pelo exemplo fornecido.
+8. Não escreva o conteúdo dos campos de justificativa em português ou em outro idioma diferente do inglês.
+
+Requisitos da saída JSON:
+1. Retorne somente JSON válido.
+2. Não use Markdown nem cercas de código.
+3. Não inclua introduções, comentários, explicações fora do JSON ou texto após o fechamento do objeto.
+4. Use aspas duplas em todas as chaves e strings.
+5. Não coloque vírgula após o último item de um objeto ou de uma lista.
+6. Use true, false e null conforme o padrão JSON, quando necessário.
+7. Não inclua campos que não foram solicitados.
+
+Tarefa:
+Gere uma justificativa R1 para cada exemplo fornecido.
+
+Uma justificativa R1 explica como o enunciado NL em inglês é mapeado para a Representação Intermediária. Ela deve identificar as informações relevantes do enunciado e explicar como essas informações são organizadas nos campos da IR.
+
+Exemplos fornecidos:
+{
+  "items": [
+    {
+      "id": "campi_001",
+      "nl": "If a student is in obvious violations of copyright law by using a room's wired connection (ie ResNet) to distribute copyrighted materials, the room's connection will be disabled, and the issue could be sent to Housing Student Judicial Affairs",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "students"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "copyright monitoring"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_002",
+      "nl": "Currently, the University of Illinois does not have any rate limits",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "unset",
+            "items": [
+              {
+                "kind": "bandwidth"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_003",
+      "nl": "University Housing monitors only the amount of traffic of each user",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "dorms"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "traffic monitor"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_004",
+      "nl": "CounterStrike server is blocked by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "service",
+                "value": "CounterStrike"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_005",
+      "nl": "AIM chat and file transfering is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "service",
+                "value": "AIM chat"
+              },
+              {
+                "kind": "service",
+                "value": "file transfer"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_006",
+      "nl": "Battlenet is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "service",
+                "value": "Battlenet"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_007",
+      "nl": "H323 video conferencing is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "traffic",
+                "value": "H323 video conferencing"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_008",
+      "nl": "Everquest is blocked by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "service",
+                "value": "Everquest"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_009",
+      "nl": "HTTP and HTTPS are allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "HTTP"
+              },
+              {
+                "kind": "protocol",
+                "value": "HTTPS"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_010",
+      "nl": "IMAP and secure IMAP are allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "IMAP"
+              },
+              {
+                "kind": "protocol",
+                "value": "secure IMAP"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_011",
+      "nl": "MSN audio and video communications are not allowed by the University firewall, but the MSN chat, application sharing and file transferring are not blocked",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "service",
+                "value": "MSN video"
+              },
+              {
+                "kind": "service",
+                "value": "MSN audio"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "service",
+                "value": "MSN chat"
+              },
+              {
+                "kind": "service",
+                "value": "MSN application sharing"
+              },
+              {
+                "kind": "service",
+                "value": "file transfer"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_012",
+      "nl": "Net2Phone is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "service",
+                "value": "Net2Phone"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_013",
+      "nl": "PC-Telephone is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "service",
+                "value": "PC Telephone"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_014",
+      "nl": "POP3 and secure POP are allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "POP3"
+              },
+              {
+                "kind": "protocol",
+                "value": "secure POP"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_015",
+      "nl": "SMTP is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "SMTP"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_016",
+      "nl": "Sony Playstation 2 is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "service",
+                "value": "Sony Playstation 2"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_017",
+      "nl": "SSH is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "SSH"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_018",
+      "nl": "Telnet is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "Telnet"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_019",
+      "nl": "Sorenson Videophone 200 is allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "service",
+                "value": "Sorenson Videophone 200"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_020",
+      "nl": "FTP and SFTP servers are allowed by the University firewall",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "university"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "firewall"
+              }
+            ]
+          },
+          {
+            "operator": "allow",
+            "items": [
+              {
+                "kind": "protocol",
+                "value": "ftp"
+              },
+              {
+                "kind": "protocol",
+                "value": "sftp"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_021",
+      "nl": "Students data limit is 100 GB per week",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "students"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "download",
+                "value": "100",
+                "unit": "gb/wk"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_022",
+      "nl": "Students 10 GB a day download quotas are on 10 AM to Midnight",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "group",
+              "value": "students"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "download",
+                "value": "10",
+                "unit": "gb/d"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": {
+          "start": "10:00",
+          "end": "23:59"
+        }
+      }
+    },
+    {
+      "id": "campi_023",
+      "nl": "The system passively monitors the network throughput when traffic is light",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "network"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "add",
+            "items": [
+              {
+                "kind": "middlebox",
+                "value": "traffic monitor"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    },
+    {
+      "id": "campi_024",
+      "nl": "There is a 6 GB per 24-hour period upload or download data transfer limit, starting at midnight of each day, on all your combined traffic on ResNet and UIC wireless",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "dorms"
+            },
+            {
+              "kind": "endpoint",
+              "value": "wireless"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "set",
+            "items": [
+              {
+                "kind": "quota",
+                "constraint": "any",
+                "value": "6",
+                "unit": "gb/d"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": {
+          "start": "00:00",
+          "end": "23:59"
+        }
+      }
+    },
+    {
+      "id": "campi_025",
+      "nl": "Guests cannot run any file sharing/downloading program",
+      "ir": {
+        "intent_id": "uniIntent",
+        "scope": {
+          "type": "for",
+          "source": null,
+          "destination": null,
+          "targets": [
+            {
+              "kind": "endpoint",
+              "value": "guests"
+            }
+          ]
+        },
+        "operations": [
+          {
+            "operator": "block",
+            "items": [
+              {
+                "kind": "service",
+                "value": "file transfer"
+              }
+            ]
+          }
+        ],
+        "temporal_constraint": null
+      }
+    }
+  ]
+}
+
+Requisitos específicos:
+1. Gere exatamente uma justificativa R1 para cada exemplo.
+2. Preserve o id original de cada exemplo.
+3. Mantenha cada justificativa concisa, objetiva e verificável.
+4. Mencione scope, source, destination, targets, operations, items e temporal_constraint somente quando esses elementos estiverem presentes na IR.
+5. Explique a passagem do enunciado NL para a IR sem inventar fatos intermediários.
+6. Retorne somente os campos id e r1.
+7. O valor do campo r1 deve estar integralmente em inglês.
+
+Formato obrigatório:
+{
+  "items": [
+    {
+      "id": "campi_001",
+      "r1": "English rationale explaining the mapping from NL to IR."
+    }
+  ]
+}

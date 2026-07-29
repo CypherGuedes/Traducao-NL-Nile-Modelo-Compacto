@@ -1,0 +1,185 @@
+Você é o modelo professor de um experimento reproduzível de tradução de intenções de rede em linguagem natural para a linguagem formal Nile.
+
+Definições:
+- Linguagem natural (NL): enunciado de entrada escrito em inglês.
+- Nile: linguagem formal de destino utilizada como resposta esperada do experimento.
+- CAMPI: conjunto de referência com 50 pares de NL e Nile.
+- Representação Intermediária (IR): estrutura JSON controlada e derivada deterministicamente da estrutura formal da expressão Nile de referência.
+- R1: justificativa explícita da passagem de NL para IR.
+- R2: justificativa explícita da passagem de IR para Nile.
+- R3: justificativa explícita da passagem direta de NL para Nile.
+
+Requisitos de idioma e preservação:
+1. As instruções deste prompt estão em português, mas o conteúdo textual de cada justificativa deve ser produzido integralmente em inglês.
+2. Escreva cada justificativa integralmente em inglês.
+3. Use inglês técnico, conciso e composto por frases completas.
+4. Preserve exatamente todos os nomes de campos JSON, campos estruturais, valores controlados, palavras-chave da Nile, operadores, identificadores, nomes de serviços, protocolos, grupos, endpoints e middleboxes, unidades e valores literais fornecidos no exemplo.
+5. Não traduza nem parafraseie valores formais.
+6. Não altere a entrada NL, a IR ou a referência Nile.
+7. Não acrescente informações que não sejam sustentadas pelo exemplo fornecido.
+8. Não escreva o conteúdo dos campos de justificativa em português ou em outro idioma diferente do inglês.
+
+Requisitos da saída JSON:
+1. Retorne somente JSON válido.
+2. Não use Markdown nem cercas de código.
+3. Não inclua introduções, comentários, explicações fora do JSON ou texto após o fechamento do objeto.
+4. Use aspas duplas em todas as chaves e strings.
+5. Não coloque vírgula após o último item de um objeto ou de uma lista.
+6. Use true, false e null conforme o padrão JSON, quando necessário.
+7. Não inclua campos que não foram solicitados.
+
+Tarefa:
+Gere uma justificativa R3 para cada exemplo fornecido.
+
+Uma justificativa R3 explica a passagem direta do enunciado NL em inglês para a expressão Nile correspondente. Ela será utilizada somente como artefato demonstrativo em exemplos few-shot.
+
+Exemplos fornecidos:
+{
+  "items": [
+    {
+      "id": "campi_026",
+      "nl": "No individual service or system running on the wired/wireless network should use more than 10 gigabytes of bandwidth per day, regardless of whether it is in inbound or outbound over the commodity network link",
+      "nile": "define intent uniIntent: for endpoint('network') set quota('any', '10', 'gb/d')"
+    },
+    {
+      "id": "campi_027",
+      "nl": "The system will trigger an overuse notification if the average for either inbound or outbound usage exceeds 10 GB per week",
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('overuse notification') set quota('any', '10', 'gb/wk')"
+    },
+    {
+      "id": "campi_028",
+      "nl": "Quotas for students are 5000 Megabyte per hr download and 2000 Megabyte per hour upload",
+      "nile": "define intent uniIntent: for group('students') set quota('download', '5000', 'mb/h'), quota('upload', '2000', 'mb/h')"
+    },
+    {
+      "id": "campi_029",
+      "nl": "Routers or anything else that does routing or NAT are prohibited from MITNet as they interfere with the operation of the network",
+      "nile": "define intent uniIntent: for endpoint('dorms') block protocol('nat')"
+    },
+    {
+      "id": "campi_030",
+      "nl": "When a total of 18 gigabytes of data is reached, the individual's bandwidth rate limit is set to 2 Mbps",
+      "nile": "define intent uniIntent: for endpoint('host') set quota('download', '18', 'gb'), bandwidth('max', '2', 'mbps')"
+    },
+    {
+      "id": "campi_031",
+      "nl": "The individual will have a 4 Mbps bandwidth rate limit",
+      "nile": "define intent uniIntent: for endpoint('host') set bandwidth('max', '4', 'mbps')"
+    },
+    {
+      "id": "campi_032",
+      "nl": "RHIT-OPEN will work in labs, classrooms and residence halls but does not allow the user to access the internal Rose-Hulman network",
+      "nile": "define intent uniIntent: from endpoint('guests') to endpoint('servers') for group('host') block traffic('any')"
+    },
+    {
+      "id": "campi_033",
+      "nl": "You may not run FTP, telnet, peer-to-peer, HTTP, IRC, DNS and mail server on your ResNet or UIC wireless",
+      "nile": "define intent uniIntent: for endpoint('dorms'), endpoint('wireless') block protocol('ftp'), protocol('telnet'), traffic('peer2peer'), protocol('http'), service('irc'), protocol('dns'), service('email')"
+    },
+    {
+      "id": "campi_034",
+      "nl": "Students have 200 GB of Free monthly usage",
+      "nile": "define intent uniIntent: for group('students') set quota('download', '200', 'gb/mth')"
+    },
+    {
+      "id": "campi_035",
+      "nl": "Faculty members have 500 Gb per week of free network use",
+      "nile": "define intent uniIntent: for group('professors') set quota('download', '500', 'gb/wk')"
+    },
+    {
+      "id": "campi_036",
+      "nl": "Students have a quota of 5 GB per day The quota is reset at 6am",
+      "nile": "define intent uniIntent: for group('students') set quota('download', '5', 'gb/d') start hour('06:00') end hour('05:59')"
+    },
+    {
+      "id": "campi_037",
+      "nl": "Internet is limited to 3 Mbps per host",
+      "nile": "define intent uniIntent: for endpoint('host') set bandwidth('max', '3', 'mbps')"
+    },
+    {
+      "id": "campi_038",
+      "nl": "P2P application is separately capped at 30 Mbps for the entire campus",
+      "nile": "define intent uniIntent: for traffic('peer2peer'), endpoint('campus') set bandwidth('max', '30', 'mbps')"
+    },
+    {
+      "id": "campi_039",
+      "nl": "Guests' network is rate-limited to 5 Mb/s per user",
+      "nile": "define intent uniIntent: for group('guests') set bandwidth('max', '5', 'mbps')"
+    },
+    {
+      "id": "campi_040",
+      "nl": "The ResNet cap is currently 200 gigabytes per each 7 day period of combined incoming and outgoing traffic",
+      "nile": "define intent uniIntent: for group('dorms') set quota('any', '200', 'gb/wk')"
+    },
+    {
+      "id": "campi_041",
+      "nl": "These network security changes include blocking traffic from the Internet into the UW network over FTP",
+      "nile": "define intent uniIntent: from endpoint('internet') to endpoint('network') block protocol('ftp')"
+    },
+    {
+      "id": "campi_042",
+      "nl": "Elements of network security currently include the following four solutions: Network Border Infrastructure System, Intrusion Prevention System, Firewalls, and Custom Unit Firewalls",
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('network border system'), middlebox('ips'), middlebox('firewall'), middlebox('unit firewall')"
+    },
+    {
+      "id": "campi_043",
+      "nl": "ACT/IT Infrastructure monitors traffic on the network for the purpose of maintaining proper network function",
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('traffic monitor')"
+    },
+    {
+      "id": "campi_044",
+      "nl": "CIS restricts traffic that is known to cause damage to the network or hosts on it, such as NETBIOS",
+      "nile": "define intent uniIntent: for endpoint('network') block service('NETBIOS')"
+    },
+    {
+      "id": "campi_045",
+      "nl": "All network traffic passing in or out of Brown's network is monitored by an intrusion detection system for signs of compromises",
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('traffic monitor')"
+    },
+    {
+      "id": "campi_046",
+      "nl": "You may not run any services (e.g., FTP services, listservers, P2P file sharing servers, publishing files via generic file services, etc.) via NYU's ResNet or NYURoam wireless networks",
+      "nile": "define intent uniIntent: for endpoint('dorms'), endpoint('wireless') block protocol('ftp'), service('listserver'), traffic('peer2peer')"
+    },
+    {
+      "id": "campi_047",
+      "nl": "Housing does not normally limit the amount of bandwidth",
+      "nile": "define intent uniIntent: for endpoint('dorms') unset bandwidth()"
+    },
+    {
+      "id": "campi_048",
+      "nl": "The UVA More Secure Network uses a firewall, a network security device designed to help protect your computer from hackers and other malicious people on the Internet.",
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('firewall')"
+    },
+    {
+      "id": "campi_049",
+      "nl": "The network firewall does prevent some applications from working in their normal manner, for example, video and audio conferencing products that use the H.323",
+      "nile": "define intent uniIntent: for endpoint('network') block traffic('H323 video conferencing')"
+    },
+    {
+      "id": "campi_050",
+      "nl": "The UC Davis network is continually scanned for prohibited activities and network threats.",
+      "nile": "define intent uniIntent: for endpoint('network') add middlebox('traffic monitor')"
+    }
+  ]
+}
+
+Requisitos específicos:
+1. Gere exatamente uma justificativa R3 para cada exemplo.
+2. Preserve o id original de cada exemplo.
+3. Mantenha cada justificativa concisa, objetiva e verificável.
+4. Explique ação, escopo, entidades, relações, argumentos e restrições temporais somente quando esses elementos estiverem presentes no par NL-Nile.
+5. Preserve o vocabulário formal e os valores literais da referência Nile.
+6. Não acrescente informações ausentes do par fornecido.
+7. Retorne somente os campos id e r3.
+8. O valor do campo r3 deve estar integralmente em inglês.
+
+Formato obrigatório:
+{
+  "items": [
+    {
+      "id": "campi_001",
+      "r3": "English rationale explaining the direct mapping from NL to Nile."
+    }
+  ]
+}

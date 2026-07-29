@@ -1,0 +1,104 @@
+{
+"items": [
+{
+"id": "campi_001",
+"r3": "The intent adds a copyright monitoring middlebox for the group of students to detect copyright violations from their wired connections, as described in the natural language policy."
+},
+{
+"id": "campi_002",
+"r3": "The intent removes any bandwidth rate limits for the university endpoint, reflecting the statement that the University of Illinois does not have any rate limits."
+},
+{
+"id": "campi_003",
+"r3": "The intent adds a traffic monitor middlebox for the dorms endpoint to monitor the amount of traffic per user, matching the description of University Housing monitoring traffic amounts."
+},
+{
+"id": "campi_004",
+"r3": "The intent adds a firewall middlebox for the university endpoint that blocks the CounterStrike service, corresponding to the blocking of the CounterStrike server by the University firewall."
+},
+{
+"id": "campi_005",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the AIM chat and file transfer services, as both are permitted by the University firewall."
+},
+{
+"id": "campi_006",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the Battlenet service, since Battlenet is allowed by the University firewall."
+},
+{
+"id": "campi_007",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows H323 video conferencing traffic, reflecting that H323 video conferencing is allowed by the University firewall."
+},
+{
+"id": "campi_008",
+"r3": "The intent adds a firewall middlebox for the university endpoint that blocks the Everquest service, corresponding to the statement that Everquest is blocked by the University firewall."
+},
+{
+"id": "campi_009",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the HTTP and HTTPS protocols, as both are allowed by the University firewall."
+},
+{
+"id": "campi_010",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the IMAP and secure IMAP protocols, since IMAP and secure IMAP are allowed by the University firewall."
+},
+{
+"id": "campi_011",
+"r3": "The intent adds a firewall middlebox for the university endpoint that blocks MSN video and MSN audio services, while allowing MSN chat, MSN application sharing, and file transfer services, matching the partial restrictions described."
+},
+{
+"id": "campi_012",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the Net2Phone service, as Net2Phone is allowed by the University firewall."
+},
+{
+"id": "campi_013",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the PC Telephone service, reflecting that PC-Telephone is allowed by the University firewall."
+},
+{
+"id": "campi_014",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the POP3 and secure POP protocols, as both are allowed by the University firewall."
+},
+{
+"id": "campi_015",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the SMTP protocol, since SMTP is allowed by the University firewall."
+},
+{
+"id": "campi_016",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the Sony Playstation 2 service, because Sony Playstation 2 is allowed by the University firewall."
+},
+{
+"id": "campi_017",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the SSH protocol, reflecting that SSH is allowed by the University firewall."
+},
+{
+"id": "campi_018",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the Telnet protocol, since Telnet is allowed by the University firewall."
+},
+{
+"id": "campi_019",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the Sorenson Videophone 200 service, as this service is allowed by the University firewall."
+},
+{
+"id": "campi_020",
+"r3": "The intent adds a firewall middlebox for the university endpoint that allows the ftp and sftp protocols, matching the statement that FTP and SFTP servers are allowed by the University firewall."
+},
+{
+"id": "campi_021",
+"r3": "The intent sets a download quota of 100 GB per week for the students group, reflecting the data limit of 100 GB per week for students."
+},
+{
+"id": "campi_022",
+"r3": "The intent sets a download quota of 10 GB per day for the students group, active from 10:00 to 23:59, matching the 10 GB daily download limit between 10 AM and Midnight."
+},
+{
+"id": "campi_023",
+"r3": "The intent adds a traffic monitor middlebox for the network endpoint to passively monitor throughput, corresponding to the system passively monitoring network throughput when traffic is light."
+},
+{
+"id": "campi_024",
+"r3": "The intent sets a combined quota of 6 GB per day for any traffic on the dorms and wireless endpoints, active from 00:00 to 23:59, reflecting the 6 GB per 24-hour upload or download limit on ResNet and UIC wireless."
+},
+{
+"id": "campi_025",
+"r3": "The intent blocks the file transfer service for the guests endpoint to prevent file sharing and downloading, as guests cannot run any file sharing/downloading program."
+}
+]
+}
