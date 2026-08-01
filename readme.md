@@ -208,11 +208,15 @@ A organização dos notebooks e a estrutura de seus blocos foram elaboradas pela
 
 As decisões metodológicas, a adaptação dos procedimentos, a execução, a validação e a interpretação dos resultados permaneceram sob responsabilidade da pesquisadora.
 
-## Observação sobre proveniência
+## Proveniência e integridade da cadeia experimental
 
-Os pacotes atuais de F0, F1 e F2 não são integralmente idênticos, byte a byte, às cópias registradas como entradas no pacote comum da F3. Os principais artefatos de F0 e F1 e as justificativas consolidadas de F2 permanecem equivalentes aos recursos utilizados na execução.
+Os pacotes operacionais de F0, F1 e F2 disponibilizados no repositório preservam os mesmos artefatos internos registrados como entradas da F3. A verificação foi realizada por meio dos manifestos e dos hashes SHA-256 dos arquivos declarados, confirmando a correspondência de nomes, tamanhos e conteúdos.
 
-A diferença remanescente envolve o arquivo histórico das gerações do professor na F2. Essa ressalva não altera os resultados preservados de F3 e F4, mas impede que o conjunto atual seja apresentado como uma cadeia binária integralmente fechada de F0 a F4.
+A continuidade entre os estados da F3 e a consolidação realizada na F4 também permanece preservada pelos manifestos e pelos arquivos de auditoria dos pacotes operacionais.
+
+O hash do arquivo ZIP externo pode ser alterado quando o pacote é recomposto, pois o formato ZIP armazena metadados próprios, como datas, ordem dos arquivos e parâmetros de compactação. Essa alteração não representa diferença nos artefatos experimentais. A verificação de integridade utiliza os manifestos e os hashes dos arquivos internos, que permanecem estáveis.
+
+Dessa forma, a cadeia experimental de F0 a F4 encontra-se preservada e auditável por meio dos artefatos, manifestos e registros de integridade disponibilizados no repositório.
 
 ## Citação
 
